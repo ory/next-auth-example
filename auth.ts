@@ -1,4 +1,6 @@
-import NextAuth from "next-auth"
+import NextAuth, {Profile} from "next-auth"
+
+import {OIDCConfig} from "next-auth/providers"
 
 // import Apple from "next-auth/providers/apple"
 // import Atlassian from "next-auth/providers/atlassian"
@@ -92,7 +94,7 @@ export const config = {
     // Foursquare,
     // Freshbooks,
     // Fusionauth,
-    GitHub,
+    // GitHub,
     // Gitlab,
     // Google,
     // Hubspot,
@@ -132,6 +134,16 @@ export const config = {
     // Zitadel,
     // Zoho,
     // Zoom,
+
+    {
+      id: "ory",
+      name: "Ory",
+      type: "oidc",
+      issuer: process.env.ORY_SDK_URL,
+      clientId: process.env.ORY_CLIENT_ID,
+      clientSecret: process.env.ORY_CLIENT_SECRET,
+      checks: ["pkce" as never, "state" as never]
+    } satisfies OIDCConfig<Profile>
   ],
   callbacks: {
     authorized({ request, auth }) {
