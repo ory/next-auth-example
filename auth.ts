@@ -1,6 +1,6 @@
-import NextAuth, {Profile} from "next-auth"
+import NextAuth, { Profile } from "next-auth"
 
-import {OIDCConfig} from "next-auth/providers"
+import { OIDCConfig } from "next-auth/providers"
 
 // import Apple from "next-auth/providers/apple"
 // import Atlassian from "next-auth/providers/atlassian"

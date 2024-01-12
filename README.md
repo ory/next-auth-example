@@ -1,4 +1,7 @@
-> The example repository is maintained from a [monorepo](https://github.com/nextauthjs/next-auth/tree/main/apps/examples/nextjs). Pull Requests should be opened against [`nextauthjs/next-auth`](https://github.com/nextauthjs/next-auth).
+> The example repository is maintained from a
+> [monorepo](https://github.com/nextauthjs/next-auth/tree/main/apps/examples/nextjs).
+> Pull Requests should be opened against
+> [`nextauthjs/next-auth`](https://github.com/nextauthjs/next-auth).
 
 <p align="center">
    <br/>
@@ -27,15 +30,22 @@
 
 NextAuth.js is a complete open source authentication solution.
 
-This is an example application that shows how `next-auth` is applied to a basic Next.js app.
+This is an example application that shows how `next-auth` is applied to a basic
+Next.js app.
 
-The deployed version can be found at [`next-auth-example.vercel.app`](https://next-auth-example.vercel.app)
+The deployed version can be found at
+[`next-auth-example.vercel.app`](https://next-auth-example.vercel.app)
 
 ### About NextAuth.js
 
-NextAuth.js is an easy to implement, full-stack (client/server) open source authentication library originally designed for [Next.js](https://nextjs.org) and [Serverless](https://vercel.com). Our goal is to [support even more frameworks](https://github.com/nextauthjs/next-auth/issues/2294) in the future.
+NextAuth.js is an easy to implement, full-stack (client/server) open source
+authentication library originally designed for [Next.js](https://nextjs.org) and
+[Serverless](https://vercel.com). Our goal is to
+[support even more frameworks](https://github.com/nextauthjs/next-auth/issues/2294)
+in the future.
 
-Go to [next-auth.js.org](https://authjs.dev) for more information and documentation.
+Go to [next-auth.js.org](https://authjs.dev) for more information and
+documentation.
 
 > _NextAuth.js is not officially associated with Vercel or Next.js._
 
@@ -51,35 +61,48 @@ npm install
 
 ### 2. Configure your local environment
 
-Copy the .env.local.example file in this directory to .env.local (which will be ignored by Git):
+Copy the .env.local.example file in this directory to .env.local (which will be
+ignored by Git):
 
 ```
 cp .env.local.example .env.local
 ```
 
-Add details for one or more providers (e.g. Google, Twitter, GitHub, Email, etc).
+Add details for one or more providers (e.g. Google, Twitter, GitHub, Email,
+etc).
 
 #### Database
 
-A database is needed to persist user accounts and to support email sign in. However, you can still use NextAuth.js for authentication without a database by using OAuth for authentication. If you do not specify a database, [JSON Web Tokens](https://jwt.io/introduction) will be enabled by default.
+A database is needed to persist user accounts and to support email sign in.
+However, you can still use NextAuth.js for authentication without a database by
+using OAuth for authentication. If you do not specify a database,
+[JSON Web Tokens](https://jwt.io/introduction) will be enabled by default.
 
 You **can** skip configuring a database and come back to it later if you want.
 
-For more information about setting up a database, please check out the following links:
+For more information about setting up a database, please check out the following
+links:
 
-- Docs: [authjs.dev/reference/core/adapters](https://authjs.dev/reference/core/adapters)
+- Docs:
+  [authjs.dev/reference/core/adapters](https://authjs.dev/reference/core/adapters)
 
 ### 3. Configure Authentication Providers
 
 1. Review and update options in `auth.ts` as needed.
 
-2. When setting up OAuth, in the developer admin page for each of your OAuth services, you should configure the callback URL to use a callback path of `{server}/api/auth/callback/{provider}`.
+2. When setting up OAuth, in the developer admin page for each of your OAuth
+   services, you should configure the callback URL to use a callback path of
+   `{server}/api/auth/callback/{provider}`.
 
-e.g. For Google OAuth you would use: `http://localhost:3000/api/auth/callback/google`
+e.g. For Google OAuth you would use:
+`http://localhost:3000/api/auth/callback/google`
 
-A list of configured providers and their callback URLs is available from the endpoint `api/auth/providers`. You can find more information at https://authjs.dev/getting-started/providers/oauth-tutorial
+A list of configured providers and their callback URLs is available from the
+endpoint `api/auth/providers`. You can find more information at
+https://authjs.dev/getting-started/providers/oauth-tutorial
 
-1. You can also choose to specify an SMTP server for passwordless sign in via email.
+1. You can also choose to specify an SMTP server for passwordless sign in via
+   email.
 
 ### 4. Start the application
 
@@ -98,7 +121,8 @@ npm run start
 
 ### 5. Preparing for Production
 
-Follow the [Deployment documentation](https://authjs.dev/getting-started/deployment)
+Follow the
+[Deployment documentation](https://authjs.dev/getting-started/deployment)
 
 ## Acknowledgements
 
