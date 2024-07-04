@@ -1,6 +1,6 @@
-import NextAuth, {Profile} from "next-auth"
+import NextAuth, { Profile } from "next-auth"
 
-import {OIDCConfig} from "next-auth/providers"
+import { OIDCConfig } from "next-auth/providers"
 
 // import Apple from "next-auth/providers/apple"
 // import Atlassian from "next-auth/providers/atlassian"
@@ -142,14 +142,31 @@ export const config = {
       issuer: process.env.ORY_SDK_URL,
       clientId: process.env.ORY_CLIENT_ID,
       clientSecret: process.env.ORY_CLIENT_SECRET,
-      checks: ["pkce" as never, "state" as never]
-    } satisfies OIDCConfig<Profile>
+      checks: ["pkce" as never, "state" as never],
+      token: {
+        idToken: true,
+      },
+    } satisfies OIDCConfig<Profile>,
   ],
   callbacks: {
     authorized({ request, auth }) {
       const { pathname } = request.nextUrl
       if (pathname === "/middleware-example") return !!auth
       return true
+    },
+    session({ session, token }) {
+      session.sid = token.sid as string
+      session.idToken = token.idToken as string
+      return session
+    },
+    jwt({ token, user, account, profile, isNewUser }) {
+      if (profile) {
+        token.sid = profile.sid
+      }
+      if (account) {
+        token.idToken = account.id_token
+      }
+      return token
     },
   },
 } satisfies NextAuthConfig
