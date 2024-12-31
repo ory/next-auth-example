@@ -1,4 +1,8 @@
-# https://docs.github.com/en/github/administering-a-repository/displaying-a-sponsor-button-in-your-repository
+# AUTO-GENERATED, DO NOT EDIT!
+# Please edit the original at https://github.com/ory/meta/blob/master/templates/repository/common/.github/FUNDING.yml
 
-open_collective: nextauth
-github: [balazsorban44, ThangHuuVu]
+# These are supported funding model platforms
+
+# github:
+patreon: _ory
+open_collective: ory
