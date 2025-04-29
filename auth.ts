@@ -58,6 +58,9 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
       id: "ory",
       name: "Ory",
       type: "oidc",
+      style: {
+        logo: "/ory.svg",
+      },
       issuer: process.env.ORY_SDK_URL,
       clientId: process.env.ORY_CLIENT_ID,
       clientSecret: process.env.ORY_CLIENT_SECRET,
