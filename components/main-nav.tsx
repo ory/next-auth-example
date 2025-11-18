@@ -41,8 +41,8 @@ export function MainNav() {
                 <ListItem href="/server-example" title="RSC Example">
                   Protecting React Server Component.
                 </ListItem>
-                <ListItem href="/middleware-example" title="Middleware Example">
-                  Using Middleware to protect pages & APIs.
+                <ListItem href="/middleware-example" title="Proxy Example">
+                  Using Proxy to protect pages & APIs.
                 </ListItem>
                 <ListItem href="/api-example" title="Route Handler Example">
                   Getting the session inside an API Route.
