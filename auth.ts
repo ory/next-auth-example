@@ -22,29 +22,23 @@ export const { handlers, auth, signIn, signOut } = NextAuth({
   theme: { logo: "https://authjs.dev/img/logo-sm.png" },
   adapter: UnstorageAdapter(storage),
   providers: [
-    // highlight-start
-    ...(process.env.AUTH_ORY_SDK_URL &&
-    process.env.AUTH_ORY_CLIENT_ID &&
-    process.env.AUTH_ORY_CLIENT_SECRET
-      ? [
-          {
-            id: "ory",
-            name: "Ory",
-            type: "oidc" as const,
-            style: {
-              logo: "/ory.svg",
-            },
-            issuer: process.env.AUTH_ORY_SDK_URL,
-            clientId: process.env.AUTH_ORY_CLIENT_ID,
-            clientSecret: process.env.AUTH_ORY_CLIENT_SECRET,
-            checks: ["pkce" as never, "state" as never],
-            token: {
-              idToken: true,
-            },
-          },
-        ]
-      : []),
-    // highlight-eng
+   // highlight-start
+   {
+    id: "ory",
+    name: "Ory",
+    type: "oidc",
+    style: {
+      logo: "/ory.svg",
+    },
+    issuer: process.env.ORY_SDK_URL,
+    clientId: process.env.ORY_CLIENT_ID,
+    clientSecret: process.env.ORY_CLIENT_SECRET,
+    checks: ["pkce" as never, "state" as never],
+    token: {
+      idToken: true,
+    },
+  },
+  // highlight-end
   ],
   basePath: "/auth",
   session: { strategy: "jwt" },

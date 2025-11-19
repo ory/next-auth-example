@@ -26,7 +26,7 @@ export async function SignOut(
   // This redirect has to be in the list of allowed post_logout_redirect_uris in the OAuth2 Client.
   const redirectTo = "http://localhost:3000/"
   const oidcLogout =
-    process.env.AUTH_ORY_SDK_URL +
+    process.env.ORY_SDK_URL +
     `/oauth2/sessions/logout?id_token_hint=${session?.idToken}&post_logout_redirect_uri=${redirectTo}`
   return (
     <form

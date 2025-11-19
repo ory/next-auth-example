@@ -23,9 +23,9 @@ The integration uses Ory as an OIDC provider with Auth.js, passing essential ide
 To run this example, you'll need to configure the following environment variables:
 
 ```
-AUTH_ORY_SDK_URL=https://your-ory-project.projects.oryapis.com
-AUTH_ORY_CLIENT_ID=your-client-id
-AUTH_ORY_CLIENT_SECRET=your-client-secret
+ORY_SDK_URL=https://your-ory-project.projects.oryapis.com
+ORY_CLIENT_ID=your-client-id
+ORY_CLIENT_SECRET=your-client-secret
 
 AUTH_SECRET=your-auth-secret
 AUTH_KV_REST_API_URL=your-vercel-kv-url (optional)
